@@ -165,7 +165,7 @@
             bindings = <
             &kp LEFT_ALT      &kp DE_W  &kp DE_F  &kp DE_B   &kp DE_P    &kp DE_J    &kp DE_L       &kp DE_U      &kp DE_Y       &kp DE_SHARP_S
             &kp LEFT_SHIFT    &kp DE_R  &kp DE_S  &kp DE_T   &kp DE_G    &kp DE_M    &kp DE_N       &kp DE_E      &kp DE_I       &kp DE_O
-&kp ESCAPE  &kp LEFT_CONTROL  &kp DE_X  &kp DE_C  &kp DE_D   &kp DE_V    &kp DE_K    &kp DE_H       &kp DE_COMMA  &kp DE_PERIOD  &kp DE_MINUS    &tog 0
+&kp ESCAPE  &kp LEFT_CONTROL  &kp DE_X  &kp DE_C  &kp DE_D   &kp DE_V    &kp DE_K    &kp DE_H       &kp DE_COMMA  &kp DE_PERIOD  &kp DE_MINUS    &trans
                                         &sl 6     &kp SPACE  &kp TAB     &kp RETURN  &kp BACKSPACE  &kp DELETE
             >;
         };
