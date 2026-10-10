@@ -123,6 +123,20 @@
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
         };
+
+        LeftShiftCaps: LeftShiftCaps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LSC";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_SHIFT>, <&kp CAPSLOCK>;
+        };
+
+        RightShiftCaps: RightShiftCaps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RSC";
+            #binding-cells = <0>;
+            bindings = <&sk RIGHT_SHIFT>, <&kp CAPSLOCK>;
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -133,20 +147,20 @@
         Base {
             display-name = "Base";
             bindings = <
-            &kp DE_Q              &kp DE_W                 &kp DE_F              &kp DE_B             &kp P        &kp DE_J  &kp DE_L              &ul DE_U_UMLAUT DE_U      &kp DE_Y                  &kp DE_SHARP_S
-            &ul DE_A_UMLAUT DE_A  &hrml LEFT_CONTROL DE_R  &hrml LEFT_ALT DE_S   &sftl LSHIFT DE_T    &kp DE_G     &kp DE_M  &sftr RSHFT DE_N      &hrmr LEFT_ALT DE_E       &hrmr RIGHT_CONTROL DE_I  &ul DE_O_UMLAUT DE_O
-&kp ESCAPE  &kp DE_Z              &kp DE_X                 &hrml RIGHT_ALT DE_C  &hrml LEFT_GUI DE_D  &kp DE_V     &kp DE_K  &hrmr RIGHT_GUI DE_H  &hrmr RIGHT_ALT DE_COMMA  &kp DE_PERIOD             &kp DE_MINUS          &tog 5
-                                                           &lt 3 CAPSLOCK        &lt 2 SPACE          &lt 1 TAB    &kp RET   &lt 4 BSPC            &kp DELETE
+                &kp DE_Q              &kp DE_W                 &kp DE_F              &kp DE_B             &kp P        &kp DE_J  &kp DE_L              &ul DE_U_UMLAUT DE_U      &kp DE_Y                  &kp DE_SHARP_S
+                &ul DE_A_UMLAUT DE_A  &hrml LEFT_CONTROL DE_R  &hrml LEFT_ALT DE_S   &kp DE_T             &kp DE_G     &kp DE_M  &sftr RSHFT DE_N      &hrmr LEFT_ALT DE_E       &hrmr RIGHT_CONTROL DE_I  &ul DE_O_UMLAUT DE_O
+&LeftShiftCaps  &kp DE_Z              &kp DE_X                 &hrml RIGHT_ALT DE_C  &hrml LEFT_GUI DE_D  &kp DE_V     &kp DE_K  &hrmr RIGHT_GUI DE_H  &hrmr RIGHT_ALT DE_COMMA  &kp DE_PERIOD             &kp DE_MINUS          &RightShiftCaps
+                                                               &lt 3 ESCAPE          &lt 2 SPACE          &lt 1 TAB    &kp RET   &lt 4 BSPC            &kp DELETE
             >;
         };
 
         Function {
             display-name = "Fun";
             bindings = <
-       &none  &none             &none          &none           &none     &none       &kp F7         &kp F8      &kp F9  &kp F12
-       &none  &kp LEFT_CONTROL  &kp LEFT_ALT   &kp LEFT_SHIFT  &none     &none       &kp F4         &kp F5      &kp F6  &kp F11
-&none  &none  &none             &kp RIGHT_ALT  &kp LEFT_GUI    &none     &none       &kp F1         &kp F2      &kp F3  &kp F10  &none
-                                &none          &none           &trans    &kp RETURN  &kp BACKSPACE  &kp DELETE
+                &none  &none             &none          &none           &none     &none       &kp F7         &kp F8      &kp F9  &kp F12
+                &none  &kp LEFT_CONTROL  &kp LEFT_ALT   &kp LEFT_SHIFT  &none     &none       &kp F4         &kp F5      &kp F6  &kp F11
+&kp LEFT_SHIFT  &none  &none             &kp RIGHT_ALT  &kp LEFT_GUI    &none     &none       &kp F1         &kp F2      &kp F3  &kp F10  &none
+                                         &none          &none           &trans    &kp RETURN  &kp BACKSPACE  &kp DELETE
             >;
         };
 
@@ -163,8 +177,8 @@
         Numbers {
             display-name = "Num";
             bindings = <
-       &none  &none             &none          &none           &none    &kp DE_PLUS      &kp DE_N7      &kp DE_N8  &kp DE_N9  &kp DE_MINUS
-       &none  &kp LEFT_CONTROL  &kp LEFT_ALT   &kp LEFT_SHIFT  &none    &kp DE_ASTERISK  &kp DE_N4      &kp DE_N5  &kp DE_N6  &kp DE_SLASH
+       &none  &none             &none          &none           &none    &kp DE_SLASH     &kp DE_N7      &kp DE_N8  &kp DE_N9  &kp DE_MINUS
+       &none  &kp LEFT_CONTROL  &kp LEFT_ALT   &kp LEFT_SHIFT  &none    &kp DE_ASTERISK  &kp DE_N4      &kp DE_N5  &kp DE_N6  &kp DE_PLUS
 &none  &none  &none             &kp RIGHT_ALT  &kp LEFT_GUI    &none    &kp DE_COMMA     &kp DE_N1      &kp DE_N2  &kp DE_N3  &kp DE_PERIOD  &kp DE_EQUAL
                                 &trans         &none           &none    &kp RETURN       &kp BACKSPACE  &kp DE_N0
             >;
